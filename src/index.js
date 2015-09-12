@@ -6,6 +6,10 @@ app.get('/', function(req, res) {
   res.send('hello world');
 });
 
+app.get('/ari', function(req, res) {
+  res.send('This is my page');
+});
+
 var server = app.listen(8000, function () {
   var host = server.address().address;
   var port = server.address().port;
