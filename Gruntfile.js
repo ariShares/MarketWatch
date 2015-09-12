@@ -31,24 +31,42 @@ module.exports = function(grunt) {
       },
     },
 
+    concurrent: {
+      dev: {
+        tasks: ['nodemon', 'watch'],
+        options: {
+          logConcurrentOutput: true
+        }
+      }
+    },
+
+    nodemon: {
+      dev: {
+        script: 'build/app.min.js',
+        watch: ['build'],
+        ignore: ['src']
+      }
+    },
+
     watch: {
       files: ['<%= jshint.files %>'],
-      tasks: ['default']
     }
   });
 
   // Load the plugin that provides the "uglify" task.
-  grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-concat');
+  grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-concurrent');
+  grunt.loadNpmTasks('grunt-nodemon');
 
   grunt.registerTask('default', '', function () {
     var taskList = [
       'jshint',
       'concat',
       'uglify',
-      'watch'
+      'concurrent'
     ];
     grunt.task.run(taskList);
   });

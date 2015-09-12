@@ -3,11 +3,12 @@ var app = express();
 
 // respond with "hello world" when a GET request is made to the homepage
 app.get('/', function(req, res) {
-  res.send('hello world');
+  res.send('hello');
+  // res.sendFile('index.html', {root : __dirname});
 });
 
 app.get('/ari', function(req, res) {
-  res.send('This is my page');
+  res.sendFile('index.html', {root : __dirname});
 });
 
 var server = app.listen(8000, function () {
