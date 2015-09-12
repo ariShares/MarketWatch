@@ -1,0 +1,23 @@
+{
+  "name": "MarketWatch",
+  "version": "1.0.0",
+  "description": "This project was created and developed by @arinewby and @ellisbigelow as a MEAN stack learning tool.",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.13.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ariShares/MarketWatch"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ariShares/MarketWatch/issues"
+  },
+  "homepage": "https://github.com/ariShares/MarketWatch"
+}
