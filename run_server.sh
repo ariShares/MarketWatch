@@ -1,3 +1,2 @@
-npm install
-grunt
-nodemon build/app.min.js
+grunt default
+# nodemon build/app.min.js
