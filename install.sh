@@ -1,2 +1,2 @@
-npm install -g nodemon
-npm install -g grunt-cli
+sudo npm install -g nodemon
+sudo npm install -g grunt-cli
