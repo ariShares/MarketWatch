@@ -43,13 +43,13 @@ module.exports = function(grunt) {
     nodemon: {
       dev: {
         script: 'build/app.min.js',
-        watch: ['build'],
-        ignore: ['src']
+        watch: ['build']
       }
     },
 
     watch: {
       files: ['<%= jshint.files %>'],
+      tasks: ['jshint', 'concat', 'uglify'],
     }
   });
 
@@ -61,13 +61,23 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-concurrent');
   grunt.loadNpmTasks('grunt-nodemon');
 
-  grunt.registerTask('default', '', function () {
+  grunt.registerTask('rebuild', '', function () {
     var taskList = [
       'jshint',
       'concat',
       'uglify',
+      // 'concurrent'
+    ];
+    grunt.task.run(taskList);
+  });
+
+  grunt.registerTask('default', '', function () {
+    var taskList = [
+      'rebuild',
       'concurrent'
     ];
     grunt.task.run(taskList);
   });
+
+
 }; 
